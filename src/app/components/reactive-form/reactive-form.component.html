@@ -1,0 +1,78 @@
+<div class="card">
+    <div class="card-header bg-secondary text-center fs-2">
+        ReactiveForm
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="mb-3">
+                <label class="form-label">Product<span class="text-danger">*</span></label>
+                <select name="product" id="product" formControlName="product" class="form-control">
+                    <option value="">Select product</option>
+                    <option [value]="product.product.key" *ngFor="let product of products">
+                        {{product.product.display_name}}</option>
+                </select>
+                <div class="text-danger"
+                    *ngIf="fControl['product'].touched && fControl['product'].errors?.['required']">
+                    Product is required
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Product Category<span class="text-danger">*</span></label>
+                <select name="category" id="category" formControlName="category" class="form-control">
+                    <option value="">Select product category</option>
+                    <option [value]="category?.key" *ngFor="let category of categories?.category">
+                        {{category?.display_name}}</option>
+                </select>
+                <div class="text-danger"
+                    *ngIf="fControl['category'].touched && fControl['category'].errors?.['required']">
+                    Product Category is required
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sub Category<span class="text-danger" *ngIf="fControl['sub_category'].errors?.['required']">*</span></label>
+                <select name="subCategory" id="subCategory" formControlName="sub_category" class="form-control">
+                    <option value="">Select sub product</option>
+                    <option [value]="sub_category?.key" *ngFor="let sub_category of sub_categories">
+                        {{sub_category?.display_name}}</option>
+                </select>
+                <div class="text-danger"
+                    *ngIf="fControl['sub_category'].touched && fControl['sub_category'].errors?.['required']">
+                    Sub Category is required
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Minimum Price Limit<span class="text-danger">*</span></label>
+                <input type="text" formControlName="min_price" class="form-control" placeholder="Enter minimum price"
+                   onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" appMinval>
+
+                <div class="text-danger"
+                    *ngIf="fControl['min_price'].touched && fControl['min_price'].errors?.['required']">
+                    Min price is required
+                </div>
+                <!-- <div class="text-danger" *ngIf="fControl['min_price'].errors?.['pattern']">
+                   Only number allowed.
+                </div> -->
+                <div class="text-danger" *ngIf="fControl['min_price'].errors?.['min']">
+                    Please enter a number greater than {{min_price}} .
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Maximum Discount Limit<span class="text-danger">*</span></label>
+                <input type="text" formControlName="max_discount" class="form-control" placeholder="Enter max discount"
+                   onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" appMinval>
+                <div class="text-danger"
+                    *ngIf="fControl['max_discount'].touched && fControl['max_discount'].errors?.['required']">
+                    Max discount price is required
+                </div>
+                <div class="text-danger" *ngIf="max_discount_err || fControl['max_discount'].errors?.['max']">
+                    Please enter a number less than {{max_discount}} .
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" (click)="onSubmit()"
+                    [disabled]="form.invalid || max_discount_err">Submit</button>
+                <button class="btn btn-outline-danger ms-3" (click)="reset()">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

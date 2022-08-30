@@ -1,0 +1,152 @@
+[
+    {
+        "product": {
+            "display_name": "Clothing",
+            "key": "clothing"
+        },
+        "category": [
+            {
+                "display_name": "Men",
+                "key": "men",
+                "max_discount": 25,
+                "min_price": 1300,
+                "is_subcat_required": true,
+                "sub_category": [
+                    {
+                        "display_name": "T-shirts",
+                        "key": "tshirts"
+                    },
+                    {
+                        "display_name": "Shirts",
+                        "key": "shirts"
+                    },
+                    {
+                        "display_name": "Jeans",
+                        "key": "jeans"
+                    }
+                ]
+            },
+            {
+                "display_name": "Women",
+                "key": "women",
+                "max_discount": 27,
+                "min_price": 2200,
+                "is_subcat_required": true,
+                "sub_category": [
+                    {
+                        "display_name": "Ethnic Wear",
+                        "key": "ethnic"
+                    },
+                    {
+                        "display_name": "Maternity",
+                        "key": "maternity"
+                    },
+                    {
+                        "display_name": "Western Wear",
+                        "key": "western"
+                    }
+                ]
+            },
+            {
+                "display_name": "Children",
+                "key": "children",
+                "max_discount": 18,
+                "min_price": 500,
+                "is_subcat_required": false,
+                "sub_category": [
+                    {
+                        "display_name": "T-shirts",
+                        "key": "tshirts"
+                    },
+                    {
+                        "display_name": "Shorts",
+                        "key": "shorts"
+                    },
+                    {
+                        "display_name": "Jeans",
+                        "key": "jeans"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "product": {
+            "display_name": "Footwear",
+            "key": "footwear"
+        },
+        "category": [
+            {
+                "display_name": "Men",
+                "key": "men",
+                "max_discount": 25,
+                "min_price": 1500,
+                "is_subcat_required": false,
+                "sub_category": [
+                    {
+                        "display_name": "Loafers",
+                        "key": "loafers"
+                    },
+                    {
+                        "display_name": "Boat shoes",
+                        "key": "boat_shoes"
+                    },
+                    {
+                        "display_name": "Boots",
+                        "key": "boots"
+                    }
+                ]
+            },
+            {
+                "display_name": "Women",
+                "key": "women",
+                "max_discount": 15,
+                "min_price": 1000,
+                "is_subcat_required": true,
+                "sub_category": [
+                    {
+                        "display_name": "Shoes",
+                        "key": "shoes"
+                    },
+                    {
+                        "display_name": "Boots",
+                        "key": "boots"
+                    },
+                    {
+                        "display_name": "Heels",
+                        "key": "heels"
+                    },
+                    {
+                        "display_name": "Ballets",
+                        "key": "ballets"
+                    },
+                    {
+                        "display_name": "Flipflops",
+                        "key": "flipflops"
+                    }
+                ]
+            },
+            {
+                "display_name": "Children",
+                "key": "children",
+                "max_discount": 30,
+                "min_price": 200,
+                "is_subcat_required": false,
+                "sub_category": [
+                    {
+                        "display_name": "Casual Shoes",
+                        "key": "casual_shoes"
+                    },
+                    {
+                        "display_name": "Fashion Sandal",
+                        "key": "fashion_sandal"
+                    },
+                    {
+                        "display_name": "Flipflops",
+                        "key": "flipflops"
+                    }
+                ]
+            }
+        ]
+    }
+]
